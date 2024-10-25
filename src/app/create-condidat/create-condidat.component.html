@@ -1,0 +1,48 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <!--contenu-->
+
+
+          <form [formGroup]="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Prenom</label>
+              <input type="text" class="form-control" formControlName="prenom" aria-describedby="emailHelp"
+                title="input" />
+
+              <label for="exampleInputEmail1">Nom</label>
+
+              <input title="input" type="text" class="form-control" formControlName="nom" aria-describedby="emailHelp"
+                 />
+              <label for="exampleInputEmail1">Email</label>
+              <input title="input" type="email" class="form-control" formControlName="email" aria-describedby="email"
+                 />
+              <!-- <input type="text" class="form-control" formControlName="etat" aria-describedby="emailHelp" placeholder="etat"> -->
+
+              <label for="exampleInputEmail1">Tel</label>
+              <input title="input" type="text" class="form-control" formControlName="tel" aria-describedby="emailHelp"
+                 />
+              <label for="exampleInputEmail1">Niveau Etude</label>
+              <input title="input" type="text" class="form-control" formControlName="niveauEtude" aria-describedby="emailHelp"
+                 />
+
+
+            </div>
+            <br />
+            <br />
+
+            <button type="submit" class="btn btn-primary" (click)="creer()">
+              Ajouter
+            </button>
+          </form>
+          <!--fin contenu category -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+

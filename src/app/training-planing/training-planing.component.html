@@ -1,0 +1,78 @@
+<body>
+  <body class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+<!--debut planing-->
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <!-- <button class="nav-link active">Home</button> -->
+    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
+      role="tab" aria-controls="nav-profile" aria-selected="false" (click)="nondebut()">Non debut</button>
+    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+      role="tab" aria-controls="nav-contact" aria-selected="false" (click)="complete()">Complete</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
+        role="tab" aria-controls="nav-profile" aria-selected="false" (click)="reporte()">Reporte</button>
+      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+        role="tab" aria-controls="nav-contact" aria-selected="false" (click)="annule()">Annule</button>
+        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+          role="tab" aria-controls="nav-contact" aria-selected="false" (click)="encours()">En cours</button>
+
+
+  </div>
+</nav>
+
+
+
+<div class="form-group text-center">
+  <label for="term">rechercher:</label>
+  <input style="width: 30%;margin: 0 auto;" title="input" type="texte" class="form-control" [(ngModel)]="term">
+</div>
+<div class="container" *ngFor="let p of filteredlist| filter:term|paginate:{itemsPerPage:4,currentPage:c} ;let i=index">
+  <div class="row row-striped" style="cursor: pointer;" [routerLink]="['/employersubintraining',p.id]">
+    <div class="col-2 text-right" >
+      <!-- <h1 class="display-4"><span class="badge badge-secondary">23</span></h1>
+      <h2>OCT</h2> -->
+      <img alt="" src="../../assets/calendar2.png" width="50%"/>
+    </div>
+    <div class="col-10" >
+      <h3 class="text-uppercase"><strong>{{p.nom}}</strong></h3>
+      <ul class="list-inline">
+        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{Dates[i]}}</li>
+        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{Dates2[i]}}</li>
+
+      </ul>
+      <p>{{p.description}}</p>
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+<!--fin planing-->
+
+
+        </div>
+        <pagination-controls (pageChange)="c=$event"></pagination-controls>
+        </div>
+
+        </div>
+        </div>
+
+
+      </body>
+

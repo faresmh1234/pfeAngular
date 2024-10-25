@@ -1,0 +1,213 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+
+
+          <!-- <section class="vh-300 gradient-custom-2">
+            <div class="container py-8 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-12 col-lg-12 col-xl-12">
+                  <div class="card card-stepper" style="border-radius: 16px;">
+                    <div class="card-header p-4">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          <p class="text-muted mb-2"> date debut: <span
+                              class="fw-bold text-body">{{formattedDate1}}</span></p>
+                          <p class="text-muted mb-0"> date fin: <span
+                              class="fw-bold text-body">{{formattedDate2}}</span> </p>
+                          <p class="text-muted mb-0"> etat: <span class="fw-bold text-body">{{OneTrining.etat}}</span>
+                          </p>
+                          <p class="text-muted mb-0"> type: <span class="fw-bold text-body">{{OneTrining.type}}</span>
+                          </p>
+
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="card-body p-4">
+                      <div class="d-flex flex-row mb-4 pb-2">
+                        <div class="flex-fill">
+                          <h5 class="bold"><span>nom:</span>{{OneTrining.nom}}</h5>
+                          <p class="text-muted"><span>categorie:</span>{{OneTrining.categorie.name}}</p>
+                          <h4 class="mb-3"><span>prix:</span> {{OneTrining.prix}} <span class="small text-muted"> dt
+                            </span></h4>
+                          <p class="text-muted">nombre dheure <span class="text-body">{{OneTrining.prix}}</span></p>
+                        </div>
+                        <div>
+                          <img title="img" class="align-self-center img-fluid"
+                            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp" width="250">
+                        </div>
+                      </div>
+                      <ul id="progressbar-1" class="mx-0 mt-0 mb-5 px-0 pt-0 pb-4">
+                        <li class="step0 active" id="step1"><span
+                            style="margin-left: 22px; margin-top: 12px;"><span>description:</span><br>{{OneTrining.description}}</span>
+                        </li>
+
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> -->
+
+
+
+          <div _ngcontent-lvk-c3="" class="row">
+            <div _ngcontent-lvk-c3="" class="col-md-6 grid-margin stretch-card">
+              <div _ngcontent-lvk-c3="" class="card tale-bg">
+
+                <div _ngcontent-lvk-c3="" class="card-people mt-auto"><img _ngcontent-lvk-c3=""
+                    src="../../assets/images/download.jpeg" alt="people">
+                  <div _ngcontent-lvk-c3="" class="weather-info">
+                    <div _ngcontent-lvk-c3="" class="d-flex">
+                      <div _ngcontent-lvk-c3="">
+                        <!-- <h2 _ngcontent-lvk-c3="" class="mb-0 font-weight-normal"><i _ngcontent-lvk-c3=""
+                            class="icon-sun mr-2"></i>31<sup _ngcontent-lvk-c3="">C</sup></h2> -->
+                      </div>
+                      <div _ngcontent-lvk-c3="" class="ml-2">
+                        <h4 _ngcontent-lvk-c3="" class="location font-weight-normal">{{OneTrining.nom}}</h4>
+                        <h6 _ngcontent-lvk-c3="" class="font-weight-normal">{{OneTrining.categorie.name}}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <div _ngcontent-lvk-c3="" class="col-md-6 grid-margin transparent">
+              <div _ngcontent-lvk-c3="" class="row">
+                <div _ngcontent-lvk-c3="" class="col-md-6 mb-4 stretch-card transparent">
+                  <div _ngcontent-lvk-c3="" class="card card-tale">
+                    <div _ngcontent-lvk-c3="" class="card-body">
+                      <p _ngcontent-lvk-c3="" class="mb-4">nombre des inscriptions</p>
+                      <p _ngcontent-lvk-c3="" class="fs-30 mb-2">{{nbri}}</p>
+
+                    </div>
+                  </div>
+                </div>
+                 <div _ngcontent-lvk-c3="" class="col-md-6 mb-4 stretch-card transparent">
+                  <div _ngcontent-lvk-c3="" class="card card-dark-blue">
+                    <div _ngcontent-lvk-c3="" class="card-body">
+                      <p _ngcontent-lvk-c3="" class="mb-4">avaluation utile :</p>
+                      <p _ngcontent-lvk-c3="" class="fs-30 mb-2">{{nbrutile}}</p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div _ngcontent-lvk-c3="" class="row">
+                <div _ngcontent-lvk-c3="" class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                  <div _ngcontent-lvk-c3="" class="card card-light-blue">
+                    <div _ngcontent-lvk-c3="" class="card-body">
+                      <p _ngcontent-lvk-c3="" class="mb-4">evaluation non utile :</p>
+                      <p _ngcontent-lvk-c3="" class="fs-30 mb-2">{{nbrnonutile}}</p>
+
+                    </div>
+                  </div>
+                </div>
+                <div _ngcontent-lvk-c3="" class="col-md-6 stretch-card transparent">
+                  <div _ngcontent-lvk-c3="" class="card card-light-danger">
+                    <div _ngcontent-lvk-c3="" class="card-body">
+                      <p _ngcontent-lvk-c3="" class="mb-4">evaluation peut utile :</p>
+                      <p _ngcontent-lvk-c3="" class="fs-30 mb-2">{{nbrpeututile}}</p>
+                      <!-- <p _ngcontent-lvk-c3="">0.22% (30 days)</p> -->
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </div>
+              <br>
+
+              <div _ngcontent-lvk-c3="" class="row">
+                <div _ngcontent-lvk-c3="" class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                  <div _ngcontent-lvk-c3="" class="card card-light-blue">
+                    <div _ngcontent-lvk-c3="" class="card-body">
+                      <p _ngcontent-lvk-c3="" class="mb-4">Evaluation tres utile :</p>
+                      <p _ngcontent-lvk-c3="" class="fs-30 mb-2">{{nbrtresutile}}</p>
+                      <!-- <p _ngcontent-lvk-c3="">2.00% (30 days)</p> -->
+                    </div>
+                  </div>
+                </div>
+                <!-- <div _ngcontent-lvk-c3="" class="col-md-6 stretch-card transparent">
+                  <div _ngcontent-lvk-c3="" class="card card-light-danger">
+                    <div _ngcontent-lvk-c3="" class="card-body">
+                      <p _ngcontent-lvk-c3="" class="mb-4">Tolal d'evaluation</p>
+                      <p _ngcontent-lvk-c3="" class="fs-30 mb-2">{{nbrutilitetotale}}</p>
+
+                    </div>
+                  </div>
+                </div> -->
+
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
+
+
+          <div _ngcontent-kmg-c3="" class="card">
+
+            <div _ngcontent-kmg-c3="" class="card-body">
+              <h3>nom de formation: {{OneTrining.nom}}</h3>
+              <h3>categorie: {{OneTrining.categorie.name}}</h3>
+              <p _ngcontent-kmg-c3="" class="card-title">Description</p>
+              <p _ngcontent-kmg-c3="" class="font-weight-500">{{OneTrining.description}}</p>
+              <p _ngcontent-kmg-c3="" class="card-title">nom formateur</p>
+              <p _ngcontent-kmg-c3="" class="font-weight-500">{{OneTrining.nomformateur}}</p>
+              <!-- <img title="img" src="../../assets/images/training.jpeg"> -->
+              <div _ngcontent-kmg-c3="" class="d-flex flex-wrap mb-5">
+                <div _ngcontent-kmg-c3="" class="mr-5 mt-3">
+                  <h3 _ngcontent-kmg-c3="" class="text-muted">nombre d'heure</h3>
+                  <h3 _ngcontent-kmg-c3="" class="text-primary fs-30 font-weight-medium">{{OneTrining.nbrhour}}</h3>
+                </div>
+                <div _ngcontent-kmg-c3="" class="mr-5 mt-3">
+                  <h3 _ngcontent-kmg-c3="" class="text-muted">prix</h3> <h3 _ngcontent-kmg-c3=""
+                    class="text-primary fs-30 font-weight-medium">{{OneTrining.prix}}<p> dt</p></h3>
+                </div>
+                <div _ngcontent-kmg-c3="" class="mr-5 mt-3">
+                  <h3 _ngcontent-kmg-c3="" class="text-muted">Date debut</h3>
+                  <h3 _ngcontent-kmg-c3="" class="text-primary fs-30 font-weight-medium">{{formattedDate1}}</h3>
+                </div>
+                <div _ngcontent-kmg-c3="" class="mr-5 mt-3">
+                  <h3 _ngcontent-kmg-c3="" class="text-muted">Date fin</h3>
+                  <h3 _ngcontent-kmg-c3="" class="text-primary fs-30 font-weight-medium">{{formattedDate2}}</h3>
+                </div>
+                <div _ngcontent-kmg-c3="" class="mr-5 mt-3">
+                  <h3 _ngcontent-kmg-c3="" class="text-muted">Type</h3>
+                  <h3 _ngcontent-kmg-c3="" class="text-primary fs-30 font-weight-medium"><p>    </p>{{OneTrining.type}}</h3>
+                </div>
+
+
+                <div _ngcontent-kmg-c3="" class="mt-3">
+                  <h3 _ngcontent-kmg-c3="" class="text-muted">Etat</h3>
+                  <h3 _ngcontent-kmg-c3="" class="text-primary fs-30 font-weight-medium">{{OneTrining.etat}}</h3>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

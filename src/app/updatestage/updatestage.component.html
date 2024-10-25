@@ -1,0 +1,233 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <label>Institut</label>
+          <div class="row">
+            <select title="select" name="idcat" id="idcat" [(ngModel)]="iid" class="form-control form-control-sm"
+              style="width: 30%;">
+
+              <option *ngFor="let p of listinstitut ;let i=index" value={{p.id}}>{{p.nom}}</option>
+
+            </select>
+
+            <!-- <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" routerLink="/createtraining">
+  <i class="mdi mdi-plus"></i>
+</button> -->
+            <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+              data-target="#exampleModal">
+              <i class="mdi mdi-plus"></i>
+            </button>
+
+
+          </div>
+
+          <!-- Button trigger modal -->
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Ajouter categorie</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form [formGroup]="form">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nom</label>
+                      <input type="text" class="form-control" formControlName="nom_institut"
+                        aria-describedby="emailHelp" placeholder="Nom">
+                      <label for="gouvernorat">gouvernorat</label>
+                      <input type="text" class="form-control" formControlName="gouvernorat" aria-describedby="emailHelp"
+                        placeholder="Nom">
+
+                    </div>
+                    <br>
+                    <br>
+
+
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" data-dismiss="modal" class="btn btn-primary" (click)="creerInstitut()">Save
+                    changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--fin modal-->
+          <label for="departement">stagiaire</label>
+          <div class="row">
+            <select title="select" name="iddep" id="iddep" [(ngModel)]="sid" class="form-control form-control-sm"
+              style="width: 30%;">
+
+              <option *ngFor="let p of liststagiaire ;let i=index" value={{p.id}}>{{p.nom}}</option>
+
+            </select>
+            <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+              data-target="#modalstagiaire">
+              <i class="mdi mdi-plus"></i>
+            </button>
+          </div>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="modalstagiaire" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Ajouter stagiaire</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <label for="listsite">Site</label>
+                  <select title="select" name="iddep" id="iddep" [(ngModel)]="siteid"
+                    class="form-control form-control-sm" style="width: 30%;">
+
+                    <option *ngFor="let p of listsite ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+                  </select>
+                  <label for="listdepartement">Departement</label>
+                  <select title="select" name="iddep" id="iddep" [(ngModel)]="departementid"
+                    class="form-control form-control-sm" style="width: 30%;">
+
+                    <option *ngFor="let p of listdepartement ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+                  </select>
+
+                  <form [formGroup]="form">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nom</label>
+                      <input type="text" class="form-control" formControlName="nom_stagiaire"
+                        aria-describedby="emailHelp" placeholder="Nom">
+                      <label for="gouvernorat">prenom</label>
+                      <input type="text" class="form-control" formControlName="prenom_stagiaire"
+                        aria-describedby="emailHelp" placeholder="Nom">
+
+                      <label for="gouvernorat">genre</label>
+                      <input type="text" class="form-control" formControlName="genre_stagiaire"
+                        aria-describedby="emailHelp" placeholder="Nom">
+                      <label for="gouvernorat">Email</label>
+                      <input type="text" class="form-control" formControlName="email_stagiaire"
+                        aria-describedby="emailHelp" placeholder="Nom">
+
+                      <label for="cin">cin</label>
+                      <input type="text" class="form-control" formControlName="cin_stagiaire"
+                        aria-describedby="emailHelp" placeholder="Nom">
+
+                      <label for="gouvernorat">Tel</label>
+                      <input type="text" class="form-control" formControlName="tel_stagiaire"
+                        aria-describedby="emailHelp" placeholder="Nom">
+
+
+
+                    </div>
+                    <br>
+                    <br>
+
+
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="creerstagiaire()">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--fin modal-->
+
+
+          <label for="">Encadrant</label>
+          <select title="select" name="idcat" id="idcat" [(ngModel)]="eid" class="form-control form-control-sm"
+            style="width: 30%;">
+
+            <option *ngFor="let p of Listencadrant ;let i=index" value={{p.id}}>{{p.username}}</option>
+
+          </select>
+          <form [formGroup]="form">
+
+            <div class="form-group">
+
+              <label for="exampleInputEmail1">Nom</label>
+              <input type="text" class="form-control" style="width: 30%;" formControlName="nom"
+                aria-describedby="emailHelp" placeholder="Nom">
+
+              <!-- <input type="text" class="form-control" formControlName="etat" aria-describedby="emailHelp" placeholder="etat"> -->
+              <label for="exampleInputEmail1">etat</label>
+              <br>
+
+
+
+
+              <div class="row"></div>
+              <select title="select" formControlName="etat" style="width: 30%;" class="form-control form-control-sm">
+
+                <!-- COMPLETE,PAS_ENCORE,NON_DEBUT -->
+
+                <option value="NON_DEBUT">NON_DEBUT</option>
+                <option value="PAS_ENCORE">PAS_ENCORE</option>
+
+                <option value="COMPLETE">COMPLETE</option>
+
+              </select>
+              <br>
+              <!-- <input type="text" class="form-control" formControlName="type" aria-describedby="emailHelp" placeholder="type"> -->
+              <label for="exampleInputEmail1">type</label>
+
+              <br>
+
+
+
+
+              <label for="exampleInputEmail1">date debut</label>
+              <input type="date" class="form-control" formControlName="date_debut" aria-describedby="emailHelp"
+                style="width: 30%;" placeholder="datedebut">
+
+              <div class="row"></div>
+              <label for="exampleInputEmail1">date fin</label>
+              <input type="date" class="form-control" formControlName="date_fin" aria-describedby="emailHelp"
+                style="width: 30%;" placeholder="date_fin">
+              <div class="row"></div>
+
+
+
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">description</label>
+                <textarea formControlName="description_stage" style="width: 50%;" class="form-control"
+                  id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+
+
+
+
+
+
+            </div>
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-primary" (click)="update()">Ajouter</button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+

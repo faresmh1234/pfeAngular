@@ -1,0 +1,144 @@
+
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <label>Categorie</label>
+          <div class="row">
+<select class="form-select" aria-label="Default select example" title="select" name="idcat" id="idcat"  [(ngModel)]="idcat"  style="width: 30%;">
+
+  <option *ngFor="let p of list ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+</select>
+
+<!-- <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" routerLink="/createtraining">
+  <i class="mdi mdi-plus"></i>
+</button> -->
+<button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal" data-target="#exampleModal">
+<i class="mdi mdi-plus"></i>
+</button>
+
+
+</div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter categorie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nom</label>
+          <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp" placeholder="Nom">
+
+        </div>
+        <br>
+        <br>
+
+
+
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="creerCategory()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--fin modal-->
+<label for="departement">Departement associé</label>
+<select class="form-select" aria-label="Default select example" title="select" name="iddep" id="iddep" [(ngModel)]="iddep"
+  style="width: 30%;">
+
+  <option *ngFor="let p of listdep ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+</select>
+<form [formGroup]="form">
+  <div class="form-group">
+
+    <label for="exampleInputEmail1">Nom</label>
+    <input type="text" class="form-control" style="width: 30%;" formControlName="nom" aria-describedby="emailHelp" placeholder="Nom">
+    <label for="exampleInputEmail1">prix</label>
+    <input type="number" class="form-control" style="width: 30%;" formControlName="prix" aria-describedby="emailHelp" placeholder="prix">
+    <!-- <input type="text" class="form-control" formControlName="etat" aria-describedby="emailHelp" placeholder="etat"> -->
+<label for="exampleInputEmail1">Etat</label>
+<br>
+
+
+
+
+    <div class="row"></div>
+    <select class="form-select" aria-label="Default select example" title="select" formControlName="etat" style="width: 30%;" >
+
+
+      <option value="NON_DEBUT" selected>NON_DEBUT</option>
+      <option value="EN_COURS">EN_COURS</option>
+      <option  value="REPORTE">REPORTE</option>
+      <option value="ANNULE">ANNULE</option>
+      <option value="COMPLETE">COMPLETE</option>
+
+    </select>
+    <br>
+    <!-- <input type="text" class="form-control" formControlName="type" aria-describedby="emailHelp" placeholder="type"> -->
+    <label for="exampleInputEmail1">Type</label>
+    <br>
+    <select class="form-select" aria-label="Default select example" title="select"  formControlName="type" style="width: 30%;" >
+
+      <option value="INTERNE">INTERNE</option>
+      <option value="EXTERNE">EXTERNE</option>
+
+    </select>
+    <br>
+
+    <label for="exampleInputEmail1">Nombre d'heure</label>
+    <input type="number" class="form-control" formControlName="nbrhour" aria-describedby="emailHelp" style="width: 30%;" placeholder="nbrhour">
+
+
+    <label for="exampleInputEmail1">Date debut</label>
+    <input type="date" class="form-control" formControlName="datedebut" aria-describedby="emailHelp" style="width: 30%;" placeholder="datedebut">
+
+    <div class="row"></div>
+    <label for="exampleInputEmail1">Date fin</label>
+    <input type="date" class="form-control" formControlName="datefin" aria-describedby="emailHelp" style="width: 30%;" placeholder="datefin">
+    <div id="message"></div>
+    <div class="row"></div>
+    <label for="exampleInputEmail1">Nom formateur</label>
+    <input type="text" class="form-control" formControlName="nomformateur" style="width: 30%;" aria-describedby="emailHelp" placeholder="nomformateur">
+
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+  <textarea formControlName="description" style="width: 50%;" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+
+
+
+
+
+
+  </div>
+  <br>
+  <br>
+
+  <button type="submit" class="btn btn-primary" (click)="create()">Ajouter</button>
+</form>
+      </div>
+      </div>
+
+      </div>
+      </div>
+      </body>

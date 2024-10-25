@@ -1,0 +1,75 @@
+   <div class="content-wrapper">
+          <div>
+
+            <form [formGroup]="form">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Années</label>
+                <select (click)="changeyear()" class="form-control form-control-sm" aria-label="Default select example"
+                  formControlName="yearchosen" style="width: 50%;">
+                  <option *ngFor="let s of yeardata2" [value]="s">{{s}}</option>
+                </select>
+
+              </div>
+            </form>
+          </div>
+
+
+
+
+
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<div class="row">
+  <div class="col-lg-3">
+    <div id="chart">
+      <!-- <apx-chart [series]=" chartOptions1.series"
+      [chart]="chartOptions1.chart"
+      [labels]="chartOptions1.labels"
+        [responsive]="chartOptions1.responsive"
+        [fill]="chartOptions1.fill"
+        ></apx-chart> -->
+
+
+          <canvas id="idpierec"></canvas>
+
+
+    </div>
+
+  </div>
+<div class="col-lg-4">
+  <div id="chart">
+    <apx-chart
+    [series]="chartOptions2.series"
+    [chart]="chartOptions2.chart"
+[title]="chartOptions2.title"
+      [fill]="chartOptions2.fill"
+      [colors]="chartOptions2.colors"
+      [labels]="chartOptions2.labels"
+
+      ></apx-chart>
+  </div>
+
+</div>
+<div class="col-lg-4">
+
+  <div id="chart">
+    <apx-chart
+    [series]="chartOptions5.series"
+    [chart]="chartOptions5.chart"
+    [dataLabels]="chartOptions5.dataLabels"
+      [plotOptions]="chartOptions5.plotOptions"
+      [yaxis]="chartOptions5.yaxis"
+      [xaxis]="chartOptions5.xaxis"
+      [fill]="chartOptions5.fill"
+      [title]="chartOptions5.title"
+      [colors]="chartOptions5.colors"
+      ></apx-chart>
+
+  </div>
+</div>
+</div>
+
+
+
+        </div>

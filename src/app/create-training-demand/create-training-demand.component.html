@@ -1,0 +1,168 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="card">
+          <div class="card-body">
+          <div class="col-12">
+            <div class="row">
+
+              <label>Sélectionner une formation</label>
+              &nbsp;&nbsp;&nbsp;
+              <select
+                title="select"
+                class="form-control form-control-sm"
+                name="idf"
+                id="idf"
+                [(ngModel)]="idf"
+                aria-label="size 3 select example"
+                style="width: 40%"
+              >
+              <option></option>
+                <option
+                  *ngFor="let p of list; let i = index"
+                  value="{{ p.id }}"
+                >
+                  {{ p.nom }}
+                </option>
+              </select>
+&nbsp;&nbsp;&nbsp;
+
+<button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+  data-target="#exampleModal">
+  <i class="mdi mdi-plus"></i>
+</button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Ajouter categorie</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <label for="">categorie</label>
+                      <select title="select" name="idcat" id="idcat" [(ngModel)]="idcat" class="form-control form-control-sm"
+                        style="width: 30%;">
+
+                        <option *ngFor="let p of listcategories ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+                      </select>
+
+                      <label>departement associé</label>
+
+                      <select title="select" name="iddep" id="iddep" [(ngModel)]="iddep" class="form-control form-control-sm"
+                        style="width: 30%;">
+
+                        <option *ngFor="let p of listdep ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+                      </select>
+
+                      <form [formGroup]="form">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Nom</label>
+                          <input type="text" class="form-control" formControlName="nomformation" aria-describedby="emailHelp"
+                            placeholder="Nom">
+
+                        </div>
+                        <br>
+                        <br>
+
+
+
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="creerformation()">
+                        créer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--fin modal-->
+
+              <!-- <button
+                type="button"
+                title="button"
+                class="btn btn-info btn-rounded btn-icon"
+                routerLink="/createnewtraining"
+              >
+                <i class="mdi mdi-plus"></i>
+              </button> -->
+            </div>
+          </div>
+
+          <form [formGroup]="form">
+            <div class="col-12">
+              <label for="analyse_besoin"
+                >Contexte et analyse des besoin (ecart en competence projet de
+                développement ,obligatoire)</label
+              >
+              <textarea
+                title="textarea"
+                style="width: 70%"
+                formControlName="analyse_besoin"
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+
+              <label for="exampleInputEmail1">Objectif</label>
+              <textarea
+                title="textarea"
+                style="width: 70%"
+                formControlName="objective"
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+
+              <p>Critere</p>
+              <textarea
+                title="textarea"
+                style="width: 70%"
+                formControlName="critere"
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+
+
+
+              <div class="form-group">
+
+
+
+                  <label for="date_souhaité">Date souhaité</label>
+                  <input
+                    style="width: 40%;"
+                    title="input"
+                    type="date"
+                    class="form-control"
+                    formControlName="date_souhaite"
+                  />
+
+
+              </div>
+
+            </div>
+          </form>
+
+          <button type="submit" class="btn btn-primary" (click)="create()" style="float: right;">
+            Demander
+          </button>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

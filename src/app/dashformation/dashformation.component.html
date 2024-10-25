@@ -1,0 +1,90 @@
+
+          <div>
+
+            <form [formGroup]="form">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Années</label>
+                <select (click)="changeyear()" class="form-control form-control-sm" aria-label="Default select example"
+                  formControlName="yearchosen" style="width: 50%;"
+                  >
+                  <option value="tout">Tout</option>
+                  <option *ngFor="let s of yeardata2" [value]="s">{{s}}</option>
+                </select>
+
+              </div>
+            </form>
+          </div>
+
+
+            <div _ngcontent-nkg-c3="" class="row">
+              <div _ngcontent-nkg-c3="" class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                <div _ngcontent-nkg-c3="" class="card" style="background-color:  #C99C7F;margin-bottom: 0px; padding: 0%;">
+                  <div _ngcontent-nkg-c3="" class="card-body">
+                    <p _ngcontent-nkg-c3="" class="mb-4">Total de formation</p>
+                    <p _ngcontent-nkg-c3="" class="fs-30 mb-2">{{nbformation}}</p>
+                    <!-- <p _ngcontent-nkg-c3="">2.00% (30 days)</p> -->
+                  </div>
+                </div>
+              </div>
+              <div _ngcontent-nkg-c3="" class="col-md-6 stretch-card transparent">
+                <div _ngcontent-nkg-c3="" class="card " style="background-color: #C67734;">
+                  <div _ngcontent-nkg-c3="" class="card-body">
+                    <p _ngcontent-nkg-c3="" class="mb-4">Tolal de stagaires</p>
+                    <p _ngcontent-nkg-c3="" class="fs-30 mb-2">{{55}}</p>
+                    <!-- <p _ngcontent-nkg-c3="">0.22% (30 days)</p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+
+          <div class="row" *ngIf="condition">
+            <div class="col-lg-4">
+
+              <canvas id="barchart"></canvas>
+              <br>
+
+
+                <canvas id="barhorizontal"></canvas>
+
+            </div>
+
+            <div class="col-lg-4">
+
+              <canvas id="piechart"></canvas>
+            </div>
+            <div class="col-lg-4">
+
+              <canvas id="piechartinternexterne"></canvas>
+            </div>
+
+
+
+
+          </div>
+
+          <br>
+
+
+          <!-- <div class="chart-container">
+            <canvas id="MyChart">{{ chart }}</canvas>
+          </div> -->
+
+          <!-- <br>
+          <div class="col-lg-8">
+            <h2>Bar par Mois </h2>
+            <canvas id="barmois"></canvas>
+          </div> -->
+          <br>
+
+  <br>
+  <div class="col-lg-8">
+    <h2>Bar par Mois </h2>
+    <canvas id="idtotalComplete"></canvas>
+  </div>
+  <br>
+
+
+
+
+

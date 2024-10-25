@@ -1,0 +1,148 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper" style="background-color: #fff;">
+
+
+          <section style="background-color: #eee;">
+            <!-- <div class="container py-5">
+
+
+              <div class="row">
+
+                <div class="col-lg-8">
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">description</p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0">{{demande.description}}</p>
+
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">objective</p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0">{{demande.objective}}</p>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">etat</p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0">{{demande.etat}}</p>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">createur</p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0">{{demande.creepar}}</p>
+                        </div>
+
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <p class="mb-0">formation</p>
+                        </div>
+                        <div class="col-sm-9">
+                          <p class="text-muted mb-0">{{demande.formation.nom}}</p>
+                        </div>
+                      </div>
+                      <hr>
+
+                      <hr>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div> -->
+
+            <div class="input-group flex-grow-1" style="display: flex; justify-content: center;"> <span class="input-group-text"><i class="icon-search"></i></span>
+              <input [(ngModel)]="term" type="text" id="navbar-search-input" placeholder="rechercher" aria-label="search"
+                style="width: 30%;" aria-describedby="search" class="form-control col-sm-3">
+            </div>
+
+
+
+            <table class="display expandable-table dataTable no-footer" style="width: 100%; background-color: #fff;">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th></th>
+                  <!--<th scope="col">cin</th>-->
+                  <th scope="col">prenom</th>
+                  <th scope="col">nom</th>
+
+                  <!--<th scope="col">Nom</th>-->
+                  <!-- <th scope="col">id</th>-->
+
+                  <th>Email</th>
+                  <th>Tel</th>
+                  <th>Adresse</th>
+                  <th>Departement</th>
+
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of list| filter:term|paginate:{itemsPerPage:7,currentPage:c} ; let i = index">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <!--<th scope="row">{{p.cin}}</th>-->
+                  <td><img src="../../assets/images/images.jpeg" style="width: 40px;" alt=""></td>
+                  <th scope="row">{{ p.firstname }}</th>
+                  <th scope="row">{{ p.lastname }}</th>
+                  <!--<td>{{p.username}}</td>-->
+                  <!--<td>{{p.id}}</td>-->
+
+                  <td>{{ p.email }}</td>
+                  <td>{{ p.phone }}</td>
+                  <td>{{ p.address }}</td>
+                  <td>{{ p.departement.name }}</td>
+
+
+
+
+
+                  <td class="text-muted">
+
+                    &nbsp;&nbsp;&nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;"
+                      [routerLink]="['/detailemployer', p.id]" width="16" height="16" fill="currentColor"
+                      class="bi bi-eye" viewBox="0 0 16 16">
+                      <path
+                        d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                      <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                    </svg>
+
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <pagination-controls (pageChange)="c=$event"></pagination-controls>
+
+
+          </section>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+

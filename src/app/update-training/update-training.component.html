@@ -1,0 +1,117 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+<div class="container-xxl py-5">
+  <div class="container">
+<h1>Modifier une formation</h1>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Categorie </label>
+     <br><label for="exampleInputPassword1">Modifier Categorie</label><br>
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="idcat" style="width: 40%;">
+
+        <option *ngFor="let s of listcat" [value]="s.id">{{s.name}}</option>
+      </select>
+      <label>departement</label>
+      <select class="form-select" aria-label="Default select example"style="width: 40%;"
+        [(ngModel)]="iddep">
+
+        <option *ngFor="let s of listdep" [value]="s.id">{{s.name}}</option>
+      </select>
+
+      <!-- <select class="form-select" aria-label="Default select example" [(ngModel)]="idcat">
+        <option *ngFor="let c of listcat | async" [value]="c.id" [selected]="c.id === idcat">
+          {{c.name}}
+        </option>
+      </select> -->
+
+    </div>
+
+
+
+
+
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="exampleInputEmail1">nom</label>
+        <input type="texte" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 40%;"
+          placeholder="nom" formControlName="nom">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">description</label>
+        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="email" formControlName="description" style="width: 40%;">
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="exampleInputPassword1">password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password"
+          formControlName="password">
+      </div> -->
+
+      <select class="form-select" aria-label="Default select example" title="select" formControlName="etat"
+        style="width: 30%;">
+
+
+        <option value="NON_DEBUT" selected>NON_DEBUT</option>
+        <option value="EN_COURS">EN_COURS</option>
+        <option value="REPORTE">REPORTE</option>
+        <option value="ANNULE">ANNULE</option>
+        <option value="COMPLETE">COMPLETE</option>
+
+      </select>
+      <br>
+      <!-- <input type="text" class="form-control" formControlName="type" aria-describedby="emailHelp" placeholder="type"> -->
+      <label for="exampleInputEmail1">type</label>
+      <br>
+      <select class="form-select" aria-label="Default select example" title="select" formControlName="type"
+        style="width: 30%;">
+
+        <option value="INTERNE">INTERNE</option>
+        <option value="EXTERNE">EXTERNE</option>
+
+      </select>
+      <div class="form-group">
+        <label for="exampleInputPassword1">datedebut</label>
+        <input type="date" class="form-control" id="exampleInputPassword1" placeholder="datedebut" style="width: 40%;"
+          formControlName="datedebut" [value]="datedebut">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">datefin</label>
+        <input type="date" class="form-control" id="exampleInputPassword1" placeholder="datefin" style="width: 40%;"
+          formControlName="datefin">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">prix</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="prix" style="width: 40%;"
+          formControlName="prix">
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">nbrhour</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="nbrhour"
+          formControlName="nbrhour" style="width: 40%;">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">nomformateur</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="nomformateur" formControlName="nomformateur" style="width: 40%;">
+      </div>
+
+      <br><br>
+      <button (click)="update()" type="submit" class="btn btn-primary">modifier</button>
+    </form>
+  </div>
+</div>
+
+
+        </div>
+        </div>
+
+        </div>
+        </div>
+        </body>

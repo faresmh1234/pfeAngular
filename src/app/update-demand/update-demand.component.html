@@ -1,0 +1,245 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <!-- <select title="select" name="idcat" id="idcat" [(ngModel)]="idcat" class="form-select" size="3"
+            aria-label="size 3 select example">
+            <option *ngFor="let p of list; let i = index" value="{{ p.id }}">
+              {{ p.name }}
+            </option>
+          </select> -->
+
+          <div class="row" style="padding: 0; margin: 0;">
+            <label>sélectionner une formation</label>
+            <div class="col-lg-3">
+
+              <select title="select" class="form-control form-control-sm" name="idf" id="idf" [(ngModel)]="idf"
+                aria-label="size 3 select example">
+
+                <option *ngFor="let p of list ;let i=index" value={{p.id}}>{{p.nom}}</option>
+
+              </select>
+
+
+              <!-- <form class="example-form">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Assignee</mat-label>
+                        <input title="input" type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                          <mat-option *ngFor="let p of list | async" [value]="p.id">
+                            {{p.nom}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>
+                    </form> -->
+
+
+              <!-- <form class="example-form">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Assignee</mat-label>
+                        <input title="mat" type="text" matInput [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete" >
+                          <mat-option *ngFor="let option of list | async" [value]="option">
+                            {{option.name}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>
+                    </form> -->
+            </div>
+
+
+            <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" routerLink="/createtraining">
+              <i class="mdi mdi-plus"></i>
+
+            </button>
+
+
+            <!-- <button class="btn btn-primary" (click)="openModal()">Open modal</button> -->
+          </div>
+          <br><br>
+
+          <form [formGroup]="form">
+            <div class="col-12">
+              <label for="analyse_besoin">contexte et analyse des besoin (ecart en competence projet de
+                développement ,obligatoire)</label>
+              <textarea title="textarea" style="width: 70%" formControlName="analyse_besoin" class="form-control"
+                id="exampleFormControlTextarea1" rows="3"></textarea>
+
+              <label for="exampleInputEmail1">objectif</label>
+              <textarea title="textarea" style="width: 70%" formControlName="objective" class="form-control"
+                id="exampleFormControlTextarea1" rows="3"></textarea>
+
+              <p>critere</p>
+              <textarea title="textarea" style="width: 70%" formControlName="critere" class="form-control"
+                id="exampleFormControlTextarea1" rows="3"></textarea>
+
+              <br /><br />
+
+              <div class="form-group">
+
+
+
+                <label for="date_souhaité">date souhaité</label>
+                <input style="width: 40%;" title="input" type="date" class="form-control" formControlName="date_souhaite" />
+
+                <br />
+                <br />
+              </div>
+              <br />
+              <br />
+            </div>
+          </form>
+
+          <button type="submit" class="btn btn-primary" (click)="update()">Modifier</button>
+
+
+          <form></form>
+            <div class="form-check">
+              <table class="display expandable-table dataTable no-footer" style="width: 100%">
+                <thead>
+                  <tr>
+
+                    <th class="border-bottom pb-2">Nom</th>
+                    <th class="border-bottom pb-2">Prenom</th>
+                    <th class="border-bottom pb-2">Matricule</th>
+                    <th class="border-bottom pb-2">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let v of memberslist; let i = index">
+                    <!-- <td>
+                      <input title="input" class="form-check-input" type="checkbox" value="{{ v.id }}" (click)="onevent($event)"
+                        id="flexCheckDefault" />
+                      <label class="form-check-label" for="flexCheckDefault"></label>
+                    </td> -->
+                    <td class="pl-0">{{ v.lastname }}</td>
+                    <td class="pl-0">{{ v.firstname }}</td>
+                    <td class="pl-0">{{ v.matricule }}</td>
+                    <td>
+                      <svg xmlns="http://www.w3.org/2000/svg" style="cursor: pointer;" (click)="deleteone(v.id)" width="16" height="16"
+                        fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                        <path
+                          d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                        <path
+                          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                      </svg>
+
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+            </div>
+            <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+              data-target="#exampleModal">
+              <i class="mdi mdi-plus"></i>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ajouter un membre</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="row">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="input-group flex-grow-1"> <span class="input-group-text"><i class="icon-search"></i></span>
+                          <input [(ngModel)]="term" type="text" id="navbar-search-input" placeholder="Search now" aria-label="search"
+                            style="width: 70%;" aria-describedby="search" class="form-control col-sm-3">
+                        </div>
+                      </div>
+                    </div>
+
+                    <form [formGroup]="form">
+
+
+                      <!--debut-->
+                        <!-- <div class="form-check">
+                          <table class="display expandable-table dataTable no-footer" style="width: 100%">
+                            <thead>
+                              <tr>
+                                <th class="border-bottom pb-2">ajouter</th>
+                                <th class="border-bottom pb-2">nom</th>
+                                <th class="border-bottom pb-2">prenom</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let v of listdesemploye; let i = index">
+                                <td>
+                                  <input title="input" class="form-check-input" type="checkbox" value="{{ v.id }}" (click)="onevent($event)"
+                                    id="flexCheckDefault" />
+                                  <label class="form-check-label" for="flexCheckDefault"></label>
+                                </td>
+                                <td class="pl-0">{{ v.lastname }}</td>
+                                <td class="pl-0">{{ v.firstname }}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+
+                        </div> -->
+
+
+
+                        <div>
+                          aaaaa
+                          <div *ngFor="let v of listemp| filter:term; let i = index">
+                            <div class="form-check form-switch">
+                              <div class="row">
+                                <div style="width: 40px;"></div>
+                              <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="{{ v.id }}" (click)="onevent($event)" >
+                              <label class="form-check-label" for="mySwitch">matricule:{{v.id}}    nom:   {{v.lastname}} {{v.firstname}} {{v.matricule}}</label>
+
+                              <p>{{v.lastname}}</p>
+                            </div>
+                            </div>
+                            <!-- <input title="input" class="form-check-input" type="checkbox" value="{{ v.id }}" (click)="onevent($event)"
+                              id="flexCheckDefault" />
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                            {{v.id}} - {{v.lastname}} {{v.firstname}} {{v.matricule}} -->
+
+                            <!-- <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+                            <label class="form-check-label" for="mySwitch"></label> -->
+
+                          </div>
+                          <!-- <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+                            <label class="form-check-label" for="mySwitch">Dark Mode</label>
+                          </div> -->
+                        </div>
+
+
+
+                      <!--fin-->
+
+
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"data-dismiss="modal" (click)="terminer()">terminer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--fin modal-->
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

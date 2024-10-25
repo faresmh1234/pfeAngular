@@ -1,0 +1,93 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+          <div class="card">
+          <div class="card-body">
+
+    <div class="input-group flex-grow-1" style="display: flex; justify-content: center;"> <span class="input-group-text"><i class="icon-search"></i></span>
+      <input [(ngModel)]="term" type="text" id="navbar-search-input" placeholder="Search now" aria-label="search"
+        style="width: 30%;" aria-describedby="search" class="form-control col-sm-3">
+    </div>
+          <!-- <input placeholder="Rechercher" title="input" type="texte" style="width: 40%;display: flex; justify-content: center;" class="form-control" [(ngModel)]="term" > -->
+          <form>
+            <div class="form-check">
+              <table
+                class="display expandable-table dataTable no-footer"
+                style="width: 100%"
+              >
+                <thead>
+                  <tr>
+                    <th class="border-bottom pb-2">ajouter</th>
+                    <th></th>
+                    <th class="border-bottom pb-2">Nom</th>
+                    <th class="border-bottom pb-2">Prenom</th>
+                    <th class="border-bottom pb-2">Matricule</th>
+                    <th class="border-bottom pb-2">Departement</th>
+                    <th class="border-bottom pb-2">Site</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let v of listdesemploye| filter:term|paginate:{itemsPerPage:5,currentPage:c} ; let i = index">
+
+                    <td>
+
+
+<div class="form-switch ">
+  <div class="row">
+    <div style="width: 40px;"></div>
+    <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" value="{{ v.id }}"
+      (click)="onevent($event)">
+  </div>
+</div>
+
+
+                      <!-- <input
+                        title="input"
+                        class="form-check-input"
+                        type="checkbox"
+                        value="{{ v.id }}"
+                        (click)="onevent($event)"
+                        id="flexCheckDefault"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="flexCheckDefault"
+                      ></label> -->
+                    </td>
+                    <td><img src="../../assets/images/images.jpeg" style="width: 40px;" alt=""></td>
+                    <td class="pl-0">{{ v.lastname }}</td>
+                    <td class="pl-0">{{ v.firstname }}</td>
+                    <td class="pl-0">{{ v.matricule }}</td>
+                    <td class="pl-0">{{ v.departement.name }}</td>
+                    <td class="pl-0">{{ v.site.name }}</td>
+
+                  </tr>
+                </tbody>
+              </table>
+              <pagination-controls (pageChange)="c=$event"></pagination-controls>
+              <div style="text-align: right;">
+                <button type="button" class="btn btn-info" [routerLink]="['/demandeformation']">créer</button>&nbsp;&nbsp;
+              </div>
+
+              <!-- <button type="submit" (click)="add()" class="btn btn-primary mr-2">Submit</button> -->
+              <!-- <button title="button" (click)="add(v.id)">ajouter</button> -->
+
+              <!-- <button type="submit" class="btn btn-primary mr-2"><div class="col-sm-6 col-md-4 col-lg-3">
+      <i class="mdi mdi-account-check" style="color: blue;"></i>
+    </div></button> -->
+            </div>
+          </form>
+
+          <!--fin-->
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>

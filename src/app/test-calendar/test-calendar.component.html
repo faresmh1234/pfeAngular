@@ -1,0 +1,23 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+<button (click)="updateHeader()" id="updateHeader">Update header</button>
+<button (click)="updateEvents()" id="updateEvents">Update events</button>
+<full-calendar *ngIf="calendarOptions" #fullcalendar [options]="calendarOptions">
+  <ng-template #eventContent let-arg>
+    <b>{{ arg.event.title }}</b> - {{ arg.event.start.getDate() }}
+  </ng-template>
+</full-calendar>
+
+
+      </div>
+      </div>
+
+      </div>
+      </div>
+      </body>

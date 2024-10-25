@@ -1,0 +1,69 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <br><br>
+
+
+          <div class="row">
+            <div class="col-md-15 stretch-card grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-title mb-0">liste des départements</p>
+                  <div class="table-responsive">
+                    <table class="table table-borderless">
+                      <thead>
+                        <tr>
+                          <th class="pl-0  pb-2 border-bottom">Numero</th>
+                          <th class="border-bottom pb-2">Nom</th>
+
+                          <!-- <th class="border-bottom pb-2">date debut</th>
+                          <th class="border-bottom pb-2">date fin</th>
+                          <th class="border-bottom pb-2">description</th>-->
+                          <!-- <th class="border-bottom pb-2">etat</th>-->
+
+
+
+                          <th class="border-bottom pb-2">action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let p of list ;let i=index">
+                          <td class="pl-0">{{i+1}}</td>
+                          <td>
+                            <p class="mb-0"><span class="font-weight-bold mr-2">{{p.name}}</span></p>
+                          </td>
+
+
+                          <td class="text-muted">
+
+                            <button type="button" class="btn btn-danger"
+                              (click)="deleteone(p.id)">Delete</button>&nbsp;&nbsp;
+
+                            <button type="button" class="btn btn-info"
+                              [routerLink]="['/detailformation',p.id]">Details</button>&nbsp;&nbsp;
+                            <button type="button" class="btn btn-warning"
+                              [routerLink]="['/updateCat',p.id]">update</button>
+
+                          </td>
+
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>

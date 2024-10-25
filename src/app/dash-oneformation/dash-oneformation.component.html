@@ -1,0 +1,67 @@
+<div class="content-wrapper">
+
+  <div>
+
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="exampleInputPassword1">Années</label>
+        <select (click)="changeyear()" class="form-control form-control-sm" aria-label="Default select example"
+          formControlName="yearchosen" style="width: 50%;">
+          <option value="Tout"></option>
+          <option *ngFor="let s of yeardata2" [value]="s">{{s}}</option>
+        </select>
+
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+    <div class="col-lg-4">
+
+      <canvas id="piechart"></canvas>
+    </div>
+
+    <div class="col-lg-6" >
+
+      <canvas id="piechartinternexterne"></canvas>
+    </div>
+
+
+
+
+
+  <div class="row">
+    <div class="col-lg-4">
+      <h2>Bar Chart</h2>
+      <canvas id="barchart"></canvas>
+    </div>
+
+    <div class="col-lg-4">
+      <h2>Bar horizontal </h2>
+      <canvas id="barhorizontal"></canvas>
+    </div>
+  </div>
+  <br>
+
+  <!-- <div class="chart-container">
+    <canvas id="MyChart">{{ chart }}</canvas>
+  </div>
+
+  <br>
+  <div class="col-lg-8">
+    <h2>Bar par Mois </h2>
+    <canvas id="barmois"></canvas>
+  </div>
+  <br> -->
+
+
+
+
+</div>

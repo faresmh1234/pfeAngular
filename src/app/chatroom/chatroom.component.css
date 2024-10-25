@@ -1,0 +1,191 @@
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background: #eee;
+}
+
+.chat-list {
+  padding: 0;
+  font-size: .8rem;
+}
+
+.chat-list li {
+  margin-bottom: 10px;
+  overflow: auto;
+  color: #ffffff;
+}
+
+.chat-list .chat-img {
+  float: left;
+  width: 48px;
+}
+
+.chat-list .chat-img img {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  width: 100%;
+}
+
+.chat-list .chat-message {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background: #5a99ee;
+  display: inline-block;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.chat-list .chat-message:before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 0;
+  height: 0;
+}
+
+.chat-list .chat-message h5 {
+  margin: 0 0 5px 0;
+  font-weight: 600;
+  line-height: 100%;
+  font-size: .9rem;
+}
+
+.chat-list .chat-message p {
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-list .chat-body {
+  margin-left: 20px;
+  float: left;
+  width: 70%;
+}
+
+.chat-list .in .chat-message:before {
+  left: -12px;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #5a99ee;
+}
+
+.chat-list .out .chat-img {
+  float: right;
+}
+
+.chat-list .out .chat-body {
+  float: right;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.chat-list .out .chat-message {
+  background: #fc6d4c;
+}
+
+.chat-list .out .chat-message:before {
+  right: -12px;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #fc6d4c;
+}
+
+.card .card-header:first-child {
+  -webkit-border-radius: 0.3rem 0.3rem 0 0;
+  -moz-border-radius: 0.3rem 0.3rem 0 0;
+  border-radius: 0.3rem 0.3rem 0 0;
+  /* border-radius:50%; */
+}
+
+.card .card-header {
+  background: #F89541;
+  border: 0;
+  font-size: 1rem;
+  padding: .65rem 1rem;
+  position: relative;
+  font-weight: 400;
+  color: #ffffff;
+}
+.content {
+  margin-top: 40px;
+  flex: 1;
+  /* Takes up remaining space */
+}
+
+ .test {
+  margin: auto 0;
+
+  position: fixed;
+
+  bottom: 0;
+
+  width: 49%;
+
+  text-align: center;
+
+left: 75%;
+  z-index: 10;
+}
+
+.row {
+  display: flex;
+  /* Use Flexbox to align items in a row */
+  align-items: center;
+  /* Vertically center items */
+  gap: 10px;
+  /* Optional: Adds space between the paragraph and the image */
+  right: 0%;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* or specify a fixed height if you prefer */
+}
+
+.chat-body {
+  flex: 1;
+  /* Takes up available space in the chat-container */
+  overflow-y: auto;
+  /* Adds a vertical scroll bar when content overflows */
+  max-height: 280px;
+  max-width: 200px;
+  /* Set this to control the height and thus the number of visible messages */
+  border: 1px solid #ccc;
+  /* Optional: adds a border around the chat area */
+  padding: 10px;
+  background-color: #f9f9f9;
+  /* Optional: background color */
+}
+
+.chat-message {
+  margin-bottom: 10px;
+  /* Optional: spacing between messages */
+}
+
+form {
+  margin-top: auto;
+  /* Pushes the form to the bottom of the chat-container */
+}
+
+.image-wrapper {
+  position: absolute;
+  /* Positions the element absolutely within the container */
+  top: 10px;
+  /* Adjust as needed */
+  right: 5px;
+  /* Adjust as needed */
+}
+
+.image-wrapper img {
+  display: block;
+  /* Ensures that the image behaves as a block element */
+}

@@ -1,0 +1,17 @@
+<app-header></app-header>
+<br><br>
+
+
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nom</label>
+    <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp" placeholder="Nom">
+
+  </div>
+  <br>
+  <br>
+
+  <button type="submit" class="btn btn-primary" (click)="creerCategory()">Ajouter</button>
+</form>
+<app-footer></app-footer>

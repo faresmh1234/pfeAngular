@@ -1,0 +1,158 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <label>Condidat</label>
+          <div class="row">
+
+            <select title="select" name="idde" id="iddep" [(ngModel)]="idde" class="form-select" aria-label="Default select example"
+              style="width: 30%;">
+
+              <option *ngFor="let p of listde ;let i=index" value={{p.id}}>{{p.condidat.nom}}</option>
+
+            </select>
+
+            <!-- <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" routerLink="/createtraining">
+  <i class="mdi mdi-plus"></i>
+</button> -->
+            <!-- <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+              data-target="#exampleModal">
+              <i class="mdi mdi-plus"></i>
+            </button> -->
+
+
+          </div>
+
+          <!-- Button trigger modal -->
+
+
+          <!-- Modal -->
+          <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Ajouter categorie</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form [formGroup]="form">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nom</label>
+                      <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp"
+                        placeholder="Nom">
+
+                    </div>
+                    <br>
+                    <br>
+
+
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="create()">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!--fin modal-->
+
+          <form [formGroup]="form">
+            <div class="form-group">
+              <br>
+              <!-- <input type="text" class="form-control" formControlName="type" aria-describedby="emailHelp" placeholder="type"> -->
+              <label for="exampleInputEmail1">Vue gestionnaire</label>
+              <br>
+              <select title="select" formControlName="vue_gestionnaire" style="width: 30%;" class="form-select" aria-label="Default select example"
+                aria-label="size 3 select example">
+
+                <option value="PRIORITAIRE">PRIORITAIRE</option>
+                <option value="EMBAUCHE">EMBAUCHE</option>
+                <option value="REFUSE">REFUSE</option>
+                <option value="PAS_EMBAUCHE">PAS_EMBAUCHE</option>
+                <!-- EMBAUCHE,REFUSE,PRIORITAIRE,PAS_EMBAUCHE -->
+
+
+              </select>
+              <br>
+              <!-- <input type="text" class="form-control" formControlName="type" aria-describedby="emailHelp" placeholder="type"> -->
+              <label for="exampleInputEmail1"> Vue Decideur</label>
+              <br>
+              <select title="select" formControlName="vue_decideur" style="width: 30%;" class="form-select" aria-label="Default select example"
+                >
+
+                <option value="PRIORITAIRE">PRIORITAIRE</option>
+                <option value="EMBAUCHE">EMBAUCHE</option>
+                <option value="REFUSE">REFUSE</option>
+                <option value="PAS_EMBAUCHE">PAS_EMBAUCHE</option>
+                <!-- EMBAUCHE,REFUSE,PRIORITAIRE,PAS_EMBAUCHE -->
+
+
+              </select>
+              <br>
+              <!-- <input type="text" class="form-control" formControlName="type" aria-describedby="emailHelp" placeholder="type"> -->
+              <label for="Vue hr"></label>
+              <br>
+              <select title="select" formControlName="vue_hr" style="width: 30%;" class="form-select" aria-label="Default select example"
+                >
+
+                <option value="PRIORITAIRE">PRIORITAIRE</option>
+                <option value="EMBAUCHE">EMBAUCHE</option>
+                <option value="REFUSE">REFUSE</option>
+                <option value="PAS_EMBAUCHE">PAS_EMBAUCHE</option>
+                <!-- EMBAUCHE,REFUSE,PRIORITAIRE,PAS_EMBAUCHE -->
+
+
+              </select>
+              <br>
+              <!-- <input type="text" class="form-control" formControlName="type" aria-describedby="emailHelp" placeholder="type"> -->
+              <label for="exampleInputEmail1">Decision finale</label>
+              <br>
+              <select title="select" formControlName="decision" style="width: 30%;" class="form-select" aria-label="Default select example"
+                >
+
+                <option value="PRIORITAIRE">PRIORITAIRE</option>
+                <option value="EMBAUCHE">EMBAUCHE</option>
+                <option value="REFUSE">REFUSE</option>
+                <option value="PAS_EMBAUCHE">PAS_EMBAUCHE</option>
+                <!-- EMBAUCHE,REFUSE,PRIORITAIRE,PAS_EMBAUCHE -->
+
+
+              </select>
+              <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-primary" (click)="create()">Ajouter</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>

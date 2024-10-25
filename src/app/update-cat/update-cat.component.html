@@ -1,0 +1,15 @@
+<app-header></app-header>
+<br><br>
+
+
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nom</label>
+    <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp" placeholder="Nom">
+
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="modifierCategory()">update</button>
+</form>
+<app-footer></app-footer>

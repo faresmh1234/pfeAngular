@@ -1,0 +1,144 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+
+          <!-- <select title="select" name="idcat" id="idcat" [(ngModel)]="idcat" class="form-control form-control-sm"
+              style="width: 30%;">
+
+              <option *ngFor="let p of list ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+            </select> -->
+
+          <!-- <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" routerLink="/createtraining">
+  <i class="mdi mdi-plus"></i>
+</button> -->
+          <!-- <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+              data-target="#exampleModal">
+              <i class="mdi mdi-plus"></i>
+            </button> -->
+
+
+
+
+          <!-- Button trigger modal -->
+
+
+
+
+          <form [formGroup]="form">
+            <div class="form-group">
+
+              <label for="exampleInputEmail1">Nom complet</label>
+              <input title="input" type="text" class="form-control" style="width: 30%;" formControlName="nomprenom"
+                aria-describedby="emailHelp">
+              <label for="site">site</label>
+              <select title="select" name="idcat" id="idcat" formControlName="site" class="form-control form-control-sm"
+                style="width: 30%;">
+
+                <option *ngFor="let p of listsite ;let i=index" value={{p.name}}>{{p.name}}</option>
+
+              </select>
+              <label for="societe">societe</label>
+              <select title="select" name="idcat" id="idcat" formControlName="ste" class="form-control form-control-sm"
+                style="width: 30%;">
+
+                <option *ngFor="let p of listsociete ;let i=index" value={{p.nom}}>{{p.nom}}</option>
+
+              </select>
+
+              <!-- "id": 2,
+              "ste": "transport",
+              "poste": "responssable rh",
+              "site": "bouargoub",
+              "date_embauche": "2024-03-03T00:00:00.000+00:00",
+              "typesuivi": "SIMPLE",
+              "typeVisite": "VIP",
+              "date_visite": "2024-05-05T00:00:00.000+00:00",
+              "arenouveleavant": "2024-06-06T00:00:00.000+00:00",
+              "commentaire": "visite medicale",
+              "observation": "visite medicale",
+              "nomprenom": "ahmed bourass" -->
+              <div class="row"></div>
+
+              <br>
+              <!-- <input type="text" class="form-control" formControlName="type" aria-describedby="emailHelp" placeholder="type"> -->
+
+              <br>
+
+              <br>
+
+              <label for="exampleInputEmail1">poste</label>
+              <input type="text" class="form-control" formControlName="poste" aria-describedby="emailHelp"
+                style="width: 30%;" placeholder="nbrhour">
+
+
+              <label for="exampleInputEmail1">date embauche</label>
+              <input type="date" class="form-control" formControlName="date_embauche" aria-describedby="emailHelp"
+                style="width: 30%;">
+
+              <label for="type suivie">type suivie</label>
+              <select title="select" formControlName="typesuivi" style="width: 30%;"
+                class="form-control form-control-sm">
+
+
+                <option value="NON_DEBUT" selected>NON_DEBUT</option>
+                <option value="SIMPLE">SIMPLE</option>
+                <option value="ADAPTE">ADAPTE</option>
+                <option value="RENFORCE">RENFORCE</option>
+
+
+              </select>
+
+              <label for="type visite"></label>
+
+              <select title="select" formControlName="typeVisite" style="width: 30%;"
+                class="form-control form-control-sm">
+
+
+                <option value="VIP">VIP</option>
+                <option value="RVIP">RVIP</option>
+                <option value="EMA">EMA</option>
+                <option value="REMA">REMA</option>
+                <option value="VR">VR</option>
+
+              </select>
+
+              <div class="row"></div>
+              <label for="exampleInputEmail1">date visite</label>
+              <input title="input" type="date" class="form-control" formControlName="date_visite" aria-describedby="emailHelp"
+                style="width: 30%;">
+              <div class="row"></div>
+              <label for="exampleInputEmail1">commentaire</label>
+              <textarea formControlName="commentaire" style="width: 50%;" class="form-control"
+                id="exampleFormControlTextarea1" rows="3"></textarea>
+
+
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">observation</label>
+                <textarea formControlName="observation" style="width: 50%;" class="form-control"
+                  id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+
+
+
+
+
+
+            </div>
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-primary" (click)="update()">Ajouter</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+

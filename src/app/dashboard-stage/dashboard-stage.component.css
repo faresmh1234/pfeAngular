@@ -1,0 +1,20 @@
+.chart-container {
+  display: flex;
+  /* Enable flexbox for the container */
+}
+
+.chart-container>div {
+  /* Style for each chart div */
+  width: 50%;
+  /* Set width to 50% for each chart */
+  /* Add other styles for charts as needed */
+}
+
+
+.chart-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Define two columns */
+  gap: 10px;
+  /* Optional spacing between charts */
+}

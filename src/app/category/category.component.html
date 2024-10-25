@@ -1,0 +1,63 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+          <!--contenu category-->
+
+          <div class="row">
+            <div class="col-md-10 stretch-card grid-margin">
+              <div class="card">
+                <div class="card-body">
+
+                  <p class="card-title mb-0">liste des projets</p>
+                  <button type="button" class="btn btn-info"
+                    [routerLink]="['/creerCategorie']">create</button>&nbsp;&nbsp;
+                  <br>
+                  <div class="table-responsive">
+
+                    <table class="table table-borderless">
+                      <thead>
+                        <tr>
+                          <th class="pl-0  pb-2 border-bottom">id</th>
+                          <th class="border-bottom pb-2">nom</th>
+                          <th class="border-bottom pb-2">action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let p of listCategory   ;let i=index">
+                          <td class="pl-0">{{p.id}}</td>
+                          <td>
+                            <p class="mb-0"><span class="font-weight-bold mr-2">{{p.name}}</span></p>
+                          </td>
+                          <td class="text-muted">
+
+                            <button type="button" class="btn btn-danger"
+                              (click)="delete(p.id)">Delete</button>&nbsp;&nbsp;
+
+                            <button type="button" class="btn btn-info"
+                              [routerLink]="['/detailcategorie2',p.id]">Details</button>&nbsp;&nbsp;
+                            <button type="button" class="btn btn-warning"
+                              [routerLink]="['/updateCat',p.id]">update</button>
+
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--fin contenu category -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>

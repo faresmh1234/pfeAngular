@@ -1,0 +1,130 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <label for="poste">poste</label>
+          <div class="row">
+            <select title="select" name="idcat" id="idcat" [(ngModel)]="idp" class="form-control form-control-sm"
+              style="width: 30%;">
+
+              <option *ngFor="let p of listpost ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+            </select>
+
+
+            <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+              data-target="#exampleModal">
+              <i class="mdi mdi-plus"></i>
+            </button>
+
+
+          </div>
+
+          <label>condidat</label>
+          <div class="row">
+            <select title="select" name="idcat" id="idcat" [(ngModel)]="idc" class="form-control form-control-sm"
+              style="width: 30%;">
+
+              <option *ngFor="let p of listc ;let i=index" value={{p.id}}>{{p.nom}}</option>
+
+            </select>
+
+
+            <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+              data-target="#exampleModal">
+              <i class="mdi mdi-plus"></i>
+            </button>
+
+
+          </div>
+
+          <!-- Button trigger modal -->
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Ajouter categorie</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form [formGroup]="form">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nom</label>
+                      <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp"
+                        placeholder="Nom">
+
+                    </div>
+                    <br>
+                    <br>
+
+
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="creerCondidat()">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--fin modal-->
+
+          <form [formGroup]="form">
+            <div class="form-group">
+
+              <label for="exampleInputEmail1">description</label>
+              <input title="input" type="text" class="form-control" style="width: 30%;" formControlName="description"
+                aria-describedby="emailHelp">
+              <label for="exampleInputEmail1">source</label>
+              <input type="TEXT" class="form-control" style="width: 30%;" formControlName="source"
+                aria-describedby="emailHelp" placeholder="prix">
+              <!-- <input type="text" class="form-control" formControlName="etat" aria-describedby="emailHelp" placeholder="etat"> -->
+
+
+              <!-- <input type="text" class="form-control" formControlName="type" aria-describedby="emailHelp" placeholder="type"> -->
+
+
+              <label for="exampleInputEmail1">date</label>
+              <input type="date" class="form-control" formControlName="date" aria-describedby="emailHelp"
+                style="width: 30%;" placeholder="date">
+
+
+              <label for="exampleInputEmail1">etat</label>
+              <input type="text" class="form-control" formControlName="etatdemandeemploie" aria-describedby="emailHelp"
+                style="width: 30%;" placeholder="datedebut">
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-primary" (click)="update()">Ajouter</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+

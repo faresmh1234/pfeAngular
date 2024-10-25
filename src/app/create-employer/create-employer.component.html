@@ -1,0 +1,190 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <!--contenu-->
+          <label for="exampleInputEmail1">Site </label>
+
+          <!-- <select title="selectd" name="idsite" id="iddep" [(ngModel)]="idsite">
+
+  <option *ngFor="let p of listsite ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+
+
+</select> -->
+
+          <div class="form-group row " style="margin-left: 0;">
+            <div class="row">
+              <input class="form-control" title="input" type="text" id="states" style="width: 40%;" (change)="onclick()"
+                [(ngModel)]="idsite2" name="states" list="states-list" />
+
+              <datalist id="states-list">
+                <option *ngFor="let p of listsite; let i = index" value="{{ p.name }}">
+                  {{ p.name }}
+                </option>
+              </datalist>
+
+              &nbsp; &nbsp;
+              <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+                data-target="#modalsite">
+                <i class="mdi mdi-plus"></i>
+              </button>
+            </div>
+            <br />
+            <label for="exampleInputEmail1">Departement</label>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalsite" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Ajouter site
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form [formGroup]="form">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Nom departement</label>
+                        <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp"
+                          placeholder="Nom" />
+                      </div>
+                      <br />
+                      <br />
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary" (click)="creersite()">
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Ajouter categorie
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form [formGroup]="form">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Nom departement</label>
+                        <input type="text" class="form-control" formControlName="name" aria-describedby="emailHelp"
+                          placeholder="Nom" />
+                      </div>
+                      <br />
+                      <br />
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary" (click)="creerDepartement()">
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <input class="form-control" title="input" type="text" id="states" (change)="onclickdep()"
+                [(ngModel)]="departement" name="states" list="deplist" value="" />
+
+              <datalist id="deplist">
+                <option *ngFor="let p of list; let i = index" value="{{ p.name }}">
+                  {{ p.name }}
+                </option>
+                <span></span>
+              </datalist>
+
+              &nbsp; &nbsp;
+              <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" data-toggle="modal"
+                data-target="#exampleModal">
+                <i class="mdi mdi-plus"></i>
+              </button>
+            </div>
+          </div>
+          <form [formGroup]="form">
+            <div class="form-group" style="margin: 0px; padding: 0px;">
+              <label for="exampleInputEmail1">Prenom</label>
+              <input type="text" class="form-control" formControlName="firstname" aria-describedby="emailHelp" />
+
+              <label for="matricule">Matricule</label>
+              <input type="text" class="form-control" formControlName="Matricule" aria-describedby="emailHelp"
+                title="input" />
+
+              <label for="exampleInputEmail1">Nom</label>
+
+              <input title="input" type="text" class="form-control" formControlName="lastname"
+                aria-describedby="emailHelp" />
+
+              <label for="exampleInputEmail1">Password</label>
+
+              <input title="input" type="text" class="form-control" formControlName="password"
+                aria-describedby="emailHelp" />
+
+              <label for="exampleInputEmail1">Cin</label>
+
+              <input title="input" type="text" class="form-control" formControlName="cin" aria-describedby="emailHelp"
+                placeholder="cin" />
+
+              <label for="exampleInputEmail1">Login</label>
+              <input title="input" type="text" class="form-control" formControlName="username"
+                aria-describedby="emailHelp" placeholder="login" />
+              <label for="exampleInputEmail1">Email</label>
+              <input title="input" type="email" class="form-control" formControlName="email" aria-describedby="email" />
+              <!-- <input type="text" class="form-control" formControlName="etat" aria-describedby="emailHelp" placeholder="etat"> -->
+
+              <label for="exampleInputEmail1">Tel</label>
+              <input title="input" type="text" class="form-control" formControlName="phone"
+                aria-describedby="emailHelp" />
+              <label for="exampleInputEmail1">Adresse</label>
+              <input title="input" type="text" class="form-control" formControlName="address"
+                aria-describedby="emailHelp" />
+              <label>Role</label>
+              <select title="selectd" name="idsite" id="iddep" formControlName="role"
+                class="form-control form-control-lg" style="width: 40%;">
+                <option value="ROLE_RESPONSABLERHVISUTEMEDICALE">
+                  ROLE_RESPONSABLERHVISUTEMEDICALE
+                </option>
+                <option value="ROLE_EMPLOYE">ROLE_EMPLOYE</option>
+                <option value="ROLE_RESPOSABLLERHFORMATIONETSTAGE">
+                  ROLE_RESPOSABLLERHFORMATIONETSTAGE
+                </option>
+              </select>
+            </div>
+            <br />
+            <br />
+
+            <button type="submit" class="btn btn-primary" (click)="creer()">
+              Ajouter
+            </button>
+          </form>
+          <!--fin contenu category -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

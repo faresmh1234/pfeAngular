@@ -1,0 +1,77 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <h1 style="text-align: center;">Modifier Evaluation</h1>
+          <br><br>
+          <div class="row">
+            <label>sélectionner une formation</label>
+            <div class="col-lg-3">
+
+              <select title="select" class="form-control form-control-sm" name="idf" id="idf" [(ngModel)]="idf"
+                aria-label="size 3 select example">
+
+                <option *ngFor="let p of list ;let i=index" value={{p.id}}>{{p.nom}}</option>
+
+              </select>
+
+
+
+            </div>
+
+
+            <button type="button" title="button" class="btn btn-info btn-rounded btn-icon" routerLink="/createtraining">
+              <i class="mdi mdi-plus"></i>
+
+            </button>
+
+
+            <!-- <button class="btn btn-primary" (click)="openModal()">Open modal</button> -->
+          </div>
+          <br><br>
+          <div class="row">
+
+
+          </div>
+
+          <br><br>
+
+          <form [formGroup]="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">utilite</label>
+              <select title="select" formControlName="utilite" style="width: 30%;" class="form-control form-control-sm">
+
+
+                <option value="PEUT_UTILE" selected>PEUT_UTILE</option>
+                <option value="TRES_UTILE">TRES_UTILE</option>
+                <option value="NON_UTILE">NON_UTILE</option>
+                <option value="UTILE">UTILE</option>
+
+
+              </select>
+              <!--UTILE,NON_UTILE,TRES_UTILE,PEUT_UTILE-->
+
+              <p>commentaire</p>
+              <textarea title="textarea" style="width: 70%" formControlName="commentaire" class="form-control"
+                id="exampleFormControlTextarea1" rows="3"></textarea>
+
+            </div>
+            <br>
+            <br>
+
+
+          </form>
+
+          <div style="text-align: right;">
+            <button type="submit" class="btn btn-primary" (click)="update()">Modifier</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+

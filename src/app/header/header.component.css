@@ -1,0 +1,13 @@
+.chat-body {
+  flex: 1;
+  /* Takes up available space in the chat-container */
+  overflow-y: auto;
+  /* Adds a vertical scroll bar when content overflows */
+  max-height: 300px;
+  /* Set this to control the height and thus the number of visible messages */
+  border: 1px solid #ccc;
+  /* Optional: adds a border around the chat area */
+  padding: 10px;
+  background-color: #f9f9f9;
+  /* Optional: background color */
+}

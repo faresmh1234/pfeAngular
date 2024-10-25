@@ -1,0 +1,98 @@
+<div class="content-wrapper">
+
+  <!--body-->
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label for="exampleInputPassword1">Années</label>
+      <select (click)="changeyear()" class="form-control form-control-sm" aria-label="Default select example"
+        formControlName="yearchosen" style="width: 50%;">
+        <option value="Tout">Tout</option>
+        <option *ngFor="let s of yeardata2" [value]="s">{{s}}</option>
+      </select>
+
+    </div>
+  </form>
+  <!-- <div class="row">
+          <div _ngcontent-wis-c3="" class="card card-light-blue" style="width: 45%;">
+            <div _ngcontent-wis-c3="" class="card-body">
+              <p _ngcontent-wis-c3="" class="mb-4">Total de véhicules</p>
+              <p _ngcontent-wis-c3="" class="fs-30 mb-2">34040</p>
+              <p _ngcontent-wis-c3="">2.00% (30 days)</p>
+            </div>
+          </div>
+          <div _ngcontent-wis-c3="" class="card card-light-blue " style="width: 45%;float: right;">
+            <div _ngcontent-wis-c3="" class="card-body">
+              <p _ngcontent-wis-c3="" class="mb-4">Total de véhicules</p>
+              <p _ngcontent-wis-c3="" class="fs-30 mb-2">34040</p>
+              <p _ngcontent-wis-c3="">2.00% (30 days)</p>
+            </div>
+          </div>
+          </div> -->
+
+
+  <div _ngcontent-nkg-c3="" class="row">
+    <div _ngcontent-nkg-c3="" class="col-md-6 mb-4 mb-lg-0 stretch-card transparent" >
+      <div _ngcontent-nkg-c3="" class="card" style="background-color:  #C99C7F;margin-bottom: 0px; padding: 0%;">
+        <div _ngcontent-nkg-c3="" class="card-body">
+          <p _ngcontent-nkg-c3="" class="mb-4">Total de stage</p>
+          <p _ngcontent-nkg-c3="" class="fs-30 mb-2">{{nbstage}}</p>
+          <!-- <p _ngcontent-nkg-c3="">2.00% (30 days)</p> -->
+        </div>
+      </div>
+    </div>
+    <div _ngcontent-nkg-c3="" class="col-md-6 stretch-card transparent">
+      <div _ngcontent-nkg-c3="" class="card " style="background-color: #C67734;">
+        <div _ngcontent-nkg-c3="" class="card-body">
+          <p _ngcontent-nkg-c3="" class="mb-4">Tolal de stagaires</p>
+          <p _ngcontent-nkg-c3="" class="fs-30 mb-2">{{nbstagiaire}}</p>
+          <!-- <p _ngcontent-nkg-c3="">0.22% (30 days)</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<br>
+  <div class="row">
+<div class="col-lg-6">
+  <div id="chart1">
+    <apx-chart [series]="chartOptionsHorizontal.series"
+    [chart]="chartOptionsHorizontal.chart"
+    [dataLabels]="chartOptionsHorizontal.dataLabels"
+      [plotOptions]="chartOptionsHorizontal.plotOptions"
+      [fill]="chartOptionsHorizontal.fill"
+       [xaxis]="chartOptionsHorizontal.xaxis"></apx-chart>
+  </div>
+</div>
+<div class="col-lg-6">
+  <div id="chart2">
+    <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+     [labels]="chartOptions.labels"
+     [fill]="chartOptions.fill"
+      [responsive]="chartOptions.responsive"
+      [colors]="chartOptions.colors"
+      ></apx-chart>
+
+  </div>
+</div>
+  </div>
+
+
+<div class="row">
+<div class="col-lg-6">
+  <h2>Bar Chart</h2>
+<canvas id="barchart3" width="400" height="200"></canvas>
+</div>
+
+
+<div class="col-lg-6">
+  <h2>Bar Chart</h2>
+  <canvas id="barchart4" width="400" height="200"></canvas>
+</div>
+</div>
+<br>
+</div>

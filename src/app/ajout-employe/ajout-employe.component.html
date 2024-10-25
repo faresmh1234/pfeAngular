@@ -1,0 +1,50 @@
+
+<br><br>
+
+<select title="selectd" name="iddep" id="iddep" [(ngModel)]="iddep">
+
+  <option *ngFor="let p of list ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+</select>
+
+
+<select title="selectd" name="iddep" id="idsite" [(ngModel)]="idsite">
+
+  <option *ngFor="let p of listsite ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+</select>
+
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nom</label>
+    <input type="text" class="form-control" formControlName="username" aria-describedby="emailHelp" placeholder="login">
+    <input type="email" class="form-control" formControlName="email" aria-describedby="email" placeholder="email">
+    <!-- <input type="text" class="form-control" formControlName="etat" aria-describedby="emailHelp" placeholder="etat"> -->
+
+
+
+
+
+
+    <input type="text" class="form-control" formControlName="phone" aria-describedby="emailHelp"
+      placeholder="phone">
+      <input type="text" class="form-control" formControlName="address" aria-describedby="emailHelp" placeholder="address">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <br>
+  <br>
+
+  <button type="submit" class="btn btn-primary" (click)="create()">Ajouter</button>
+</form>
+

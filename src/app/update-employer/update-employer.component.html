@@ -1,0 +1,76 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+<!----------------------------------------------------->
+<div class="container-xxl py-5">
+  <div class="container">
+<h1>modifier</h1>
+<div class="form-group">
+  <label for="exampleInputPassword1">Departement</label>
+  <select class="form-select" aria-label="Default select example" [(ngModel)]="iddep">
+    <option *ngFor="let s of listdep" [value]="s.id">{{s.name}}</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="exampleInputPassword1">site</label>
+  <select class="form-select" aria-label="Default select example" [(ngModel)]="idsite" >
+    <option *ngFor="let s of listsite" [value]="s.id">{{s.name}}</option>
+  </select>
+</div>
+
+
+
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="exampleInputEmail1">username</label>
+        <input type="texte" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="username" formControlName="username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">email</label>
+        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="email" formControlName="email">
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="exampleInputPassword1">password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password"
+          formControlName="password">
+      </div> -->
+      <div class="form-group">
+        <label for="exampleInputPassword1">prenom</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="password"
+          formControlName="firstname">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">nom</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="password" formControlName="lastname">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">phone</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="password" formControlName="phone">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">address</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="password" formControlName="address">
+      </div>
+      <!-- <div class="col-12">
+        <label>Picture</label>
+        <input type="file" class="form-control" name="file" (change)="handleFileInput($event)">
+      </div> -->
+      <br><br>
+      <button (click)="update()" type="submit" class="btn btn-primary">modifier</button>
+    </form>
+  </div>
+</div>
+  </div>
+  </div>
+
+  </div>
+  </div>
+  </body>
+

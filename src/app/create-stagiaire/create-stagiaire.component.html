@@ -1,0 +1,74 @@
+<body>
+  <div class="container-scroller">
+    <app-header></app-header>
+    <div class="container-fluid page-body-wrapper">
+      <app-slidebar></app-slidebar>
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+
+<div class="modal-body">
+  <label for="listsite">Site</label>
+  <select title="select" name="iddep" id="iddep" [(ngModel)]="siteid" class="form-select" aria-label="Default select example"
+    style="width: 30%;">
+
+    <option *ngFor="let p of listsite ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+  </select>
+  <label for="listdepartement">Departement</label>
+  <select title="select" name="iddep" id="iddep" [(ngModel)]="departementid" class="form-select" aria-label="Default select example"
+    style="width: 30%;">
+
+    <option *ngFor="let p of listdepartement ;let i=index" value={{p.id}}>{{p.name}}</option>
+
+  </select>
+
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nom</label>
+      <input type="text" class="form-control" formControlName="nom_stagiaire" aria-describedby="emailHelp"
+        placeholder="Nom">
+      <label for="gouvernorat">prenom</label>
+      <input type="text" class="form-control" formControlName="prenom_stagiaire" aria-describedby="emailHelp"
+        placeholder="Nom">
+
+      <label for="gouvernorat">Genre</label>
+      <!-- <input type="text" class="form-control" formControlName="genre_stagiaire" aria-describedby="emailHelp"
+        placeholder="Nom"> -->
+        <select class="form-select" aria-label="Default select example" name="" id="" formControlName="genre_stagiaire">
+          <option value="MASCULIN">MASCULIN</option>
+          <option value="FEMININ">FEMININ</option>
+        </select>
+
+      <label for="gouvernorat">Email</label>
+      <input type="text" class="form-control" formControlName="email_stagiaire" aria-describedby="emailHelp"
+        placeholder="Nom">
+
+      <label for="cin">Cin</label>
+      <input type="text" class="form-control" formControlName="cin_stagiaire" aria-describedby="emailHelp"
+        placeholder="Nom">
+
+      <label for="gouvernorat">Tel</label>
+      <input type="text" class="form-control" formControlName="tel_stagiaire" aria-describedby="emailHelp"
+        placeholder="Nom">
+
+
+
+    </div>
+    <br>
+    <br>
+
+
+
+  </form>
+  <button type="button" class="btn btn-primary" (click)="creerstagiaire()">Save changes</button>
+
+</div>
+
+  </div>
+  </div>
+
+  </div>
+  </div>
+  </body>
+
