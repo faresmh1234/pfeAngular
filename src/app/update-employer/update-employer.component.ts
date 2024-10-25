@@ -101,6 +101,7 @@ let formdata = new FormData()
     },
     (error:any)=>{console.log("error",error)}
    )
+    this.router.navigateByUrl("/employe")
    }
 
   ListdepFunction(){
