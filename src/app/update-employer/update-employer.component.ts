@@ -91,11 +91,13 @@ let formdata = new FormData()
      formdata.append("phone",this.form.value.phone)
      formdata.append("email",this.form.value.email)
      formdata.append("address",this.form.value.address)
-     formdata.append("role","employe")
+    // formdata.append("role","employe")
 
     this.employerservice.updatewhithdands(this.id,this.iddep,this.idsite,formdata).subscribe(
-     (res:any)=>{this.employe=res;console.log("employe",this.employe);
-    this.router.navigateByUrl("/employe")
+     (res:any)=>{this.employe=res;
+      console.log("employe",this.employe);
+   // this.router.navigateByUrl("/employe")
+   alert("sucess")
     },
     (error:any)=>{console.log("error",error)}
    )

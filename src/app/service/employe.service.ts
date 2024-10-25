@@ -39,7 +39,7 @@ Create(data:any)
   updatewhithdands(id:string,idd:string,ids:string,data:any)
 {
   console.log("id:",id);
-    console.log("data:",data);
+
 
   return this.http.put(`${environment.baseUrl}Employe/updatewithdands/${id}/${idd}/${ids}`,data); }
 
